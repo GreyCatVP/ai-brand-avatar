@@ -1,1 +1,10 @@
-
+version: "3.9"
+services:
+  bot:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./brand_core:/app/brand_core
+      - ./knowledge:/app/knowledge
+    restart: unless-stopped
